@@ -1,84 +1,57 @@
-Sales Lead Management System (Phase 1)
-📌 Project Overview
+# Salesforce Sales Lead Management System
 
-This project focuses on designing and implementing a foundational Lead Management and Sales Pipeline Tracking System using core Salesforce platform capabilities.
-The system automates lead capture and assignment, standardizes the sales process, and provides management with visibility into performance metrics.
+## Introduction
 
-🎯 Project Goal
+This project is a comprehensive B2C Salesforce CRM implementation designed to solve common challenges in sales lead management. The system automates the entire lead lifecycle, from initial capture on a website to final reporting on sales performance.  It provides a streamlined process for sales agents and gives management real-time visibility into the sales pipeline through customized reports and dashboards.
 
-Automate Lead Capture & Routing
+This project was built following a structured 10-phase implementation plan, covering everything from initial analysis to final UI configuration.
 
-Standardize the Lead Qualification & Conversion Process
+## Key Features
 
-Track and visualize the Sales Pipeline
+-   **Automated Lead Capture**: A web-to-lead form to capture inquiries directly from a website, eliminating manual data entry.
+-   **Automated Lead Assignment**: A record-triggered Flow that automatically assigns incoming leads to the correct sales representative based on business criteria.
+-   **Lead Qualification & Conversion**: A standardized process for qualifying leads and converting them into Accounts, Contacts, and Opportunities.
+-   **Opportunity Pipeline Tracking**: Management of deals through a structured sales pipeline using Opportunity stages.
+-   **Sales Performance Dashboard**: A centralized dashboard that provides a visual overview of key metrics, including leads by source, the sales pipeline by stage, and lead conversion rates.
+-   **Custom Lightning App**: A dedicated "Sales Lead Management" app that provides users with a focused workspace containing only the necessary tabs and features.
 
-Provide Performance Dashboards & Reports for sales managers
+## Salesforce Concepts Implemented
 
-🛠️ Core Functional Requirements
+This project demonstrates proficiency in a wide range of Salesforce declarative development and administration skills.
 
-Automated Lead Capture – Capture leads via website form (Web-to-Lead).
+* **Automation**
+    * **Flow Builder**: Used to create a record-triggered flow for automating lead assignment.
+    * **Web-to-Lead**: Standard feature for web form integration.
 
-Manual Lead Creation – Sales reps can create new leads directly in Salesforce.
+* **Data Modeling**
+    * **Standard Objects**: Utilized Lead, Account, Contact, and Opportunity objects.
+    * **Custom Fields**: Added custom fields to standard objects to capture additional data (e.g., `Lead Score`).
+    * **Page Layouts**: Customized page layouts for a user-friendly experience.
 
-Automated Lead Routing – Leads auto-assigned to reps based on region/criteria.
+* **Reporting & Analytics**
+    * **Reports**: Created Tabular and Summary reports to analyze data.
+    * **Report Charts**: Added charts to reports for better visualization.
+    *  **Dashboards**: Built a dashboard with multiple components (Funnel, Bar, Donut charts) for at-a-glance insights[cite: 109].
 
-Lead Qualification – Assign status and Lead Score for prioritization.
+* **User Interface & Experience**
+    *  **Lightning App Builder**: Created a custom Lightning App for a tailored user experience[cite: 69].
+    *  **Custom Tabs & Navigation**: Configured app navigation to include relevant tabs[cite: 71].
 
-Standardized Conversion – Convert leads to Accounts, Contacts, and Opportunities.
+* **Security & Sharing**
+    *  **User Setup**: Created and managed user records[cite: 17].
+    *  **Profiles**: Assigned standard profiles to users to control object and field access[cite: 18].
+    *  **Roles & Role Hierarchy**: Established a role hierarchy to ensure managers have visibility into their team's data[cite: 19].
 
-Pipeline Tracking – Define and track stages (Prospecting → Negotiation → Closed).
+## Setup & Configuration Steps
 
-Performance Visibility – Dashboards & reports for lead sources, conversion rates, and pipeline health.
+To replicate this project in a Salesforce Developer Org, follow these key steps:
 
-👥 Stakeholders
-
-Sales Representatives: Need simple, efficient lead management.
-
-Sales Managers: Require visibility for performance monitoring and forecasting.
-
-System Administrators: Require a scalable, maintainable solution using declarative tools.
-
-🔄 Business Process Flow
-
-Lead Creation – Web form or manual entry.
-
-Assignment – Automated lead assignment rules.
-
-Qualification – Sales rep evaluates and scores the lead.
-
-Conversion – Qualified leads convert to Account, Contact, and Opportunity.
-
-Opportunity Management – Reps track deals through sales stages.
-
-Reporting – Performance tracked with reports & dashboards.
-
-🌍 Industry Applications
-
-This solution is industry-agnostic and adaptable for:
-
-IT Services (Cloud Solutions, Security Audits)
-
-Real Estate (Property/Neighborhood leads)
-
-Banking & Insurance (Financial product interest tracking)
-
-📦 AppExchange Exploration
-
-Phase 1 requirements fully met with standard Salesforce features.
-
-No third-party apps required at this stage.
-
-Future scope: Lead enrichment, e-signatures, and advanced analytics.
-
-🚀 Next Steps (Future Phases)
-
-Integration with marketing tools (e.g., Pardot).
-
-AI-based lead scoring (Einstein Lead Scoring).
-
-Mobile-first enhancements for field sales reps.
-
-📖 Project Phase
-
-This README covers Phase 1: Problem Understanding & Industry Analysis.
-Future phases will include system design, implementation, testing, and deployment.
+1.   **Org Setup**: Configure basic company settings, create two new users (e.g., a Sales Rep and a Sales Manager), and establish a simple two-level role hierarchy.
+2.   **Data Model Customization**: Add a custom picklist field named `Lead Score` to the Lead object and adjust the page layout.
+3.  **Automation**:
+    * Enable Web-to-Lead and generate the HTML form.
+    * Create a record-triggered flow on the Lead object that assigns new leads from the web to your Sales Rep user.
+4.  **Reports & Dashboard**:
+    * Create three reports: `Leads by Source`, `Sales Pipeline by Stage`, and `Lead Conversion Rate`.
+    * Create a `Sales Performance` dashboard and add the three reports as components.
+5.  **Create Lightning App**: Use the App Manager to build a new Lightning App named "Sales Lead Management", adding the Home, Leads, Opportunities, Reports, and Dashboards tabs. Assign it to the relevant user profiles.
